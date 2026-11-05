@@ -55,6 +55,8 @@ for filename in ('plex-sans-LICENSE.txt','plex-sans-arabic-LICENSE.txt'):
 config = json.loads((ROOT / 'firebase.json').read_text())['hosting']
 for excluded in ('vendor/**','docs/**','scripts/**','**/.*','*.md','LICENSE.txt','assets/fonts/Hero.*','assets/fonts/Poppins*.ttf','assets/fonts/Almarai*.ttf'):
     require(excluded in config['ignore'], f'Hosting exclusion missing: {excluded}')
+for route in ('/', '/ar', '/404'):
+    require(any(x.get('source') == route and {'key': 'Cache-Control', 'value': 'no-cache'} in x['headers'] for x in config['headers']), f'Clean-page cache rule missing: {route}')
 require(not (ROOT / '.github/workflows').exists(), 'CI must remain disabled')
 if errors:
     print('\n'.join(errors)); sys.exit(1)

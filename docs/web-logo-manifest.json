@@ -1,0 +1,34 @@
+[
+  {
+    "source": "vendor/brand-r3/cave-en-color.pdf",
+    "sourceSha256": "f3e291e3f76ba051f5d53b5074f64c5a4fe8785239813517d2635fde8efeb8b8",
+    "file": "assets/logos/web/cave-logo-en-color-compact.svg",
+    "sha256": "83b8edc685509fbc3bc748d8f01172cd4213bbd96025a5323abfcb316be9d821",
+    "method": "PyMuPDF 1.26.5 get_svg_image(text_as_path=True)",
+    "note": "Font-independent delivery derivative of approved R3 vector PDF; original editable SVG master retained unchanged."
+  },
+  {
+    "source": "vendor/brand-r3/cave-en-white.pdf",
+    "sourceSha256": "cb60f68fc7149ebdf8acc4396255a2528201d4aa317c40e9bba9dfc908d0c6db",
+    "file": "assets/logos/web/cave-logo-en-white-compact.svg",
+    "sha256": "6ac4859aedb04fb26695c2c122b187a24f2dcf6c19c6067afdcab643ea8f8a18",
+    "method": "PyMuPDF 1.26.5 get_svg_image(text_as_path=True)",
+    "note": "Font-independent delivery derivative of approved R3 vector PDF; original editable SVG master retained unchanged."
+  },
+  {
+    "source": "vendor/brand-r3/cave-ar-color.pdf",
+    "sourceSha256": "2889225a6e7c78a36ac84053827fd02d77ea4c6156f72b42b1c44c798bef6ce5",
+    "file": "assets/logos/web/cave-logo-ar-color-compact.svg",
+    "sha256": "4b3227c45117103dee4e9528c0727173ebf4c71656b17856d629a44e820d79c7",
+    "method": "PyMuPDF 1.26.5 get_svg_image(text_as_path=True)",
+    "note": "Font-independent delivery derivative of approved R3 vector PDF; original editable SVG master retained unchanged."
+  },
+  {
+    "source": "vendor/brand-r3/cave-ar-white.pdf",
+    "sourceSha256": "e8591252dcb794eeff3b09b4a1a920afd615eaf1aab0b14a5d250fea1ccddd52",
+    "file": "assets/logos/web/cave-logo-ar-white-compact.svg",
+    "sha256": "3dab3ef67a87fd1d9de4da6b1f3f4c6f3a3fa2c4cda12fc6cc66b866b2baa7f5",
+    "method": "PyMuPDF 1.26.5 get_svg_image(text_as_path=True)",
+    "note": "Font-independent delivery derivative of approved R3 vector PDF; original editable SVG master retained unchanged."
+  }
+]

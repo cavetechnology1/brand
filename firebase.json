@@ -13,7 +13,9 @@
       "vendor/**",
       "docs/**",
       "*.md",
-      "LICENSE.txt"
+      "LICENSE.txt",
+      "assets/fonts/Poppins*.ttf",
+      "assets/fonts/Almarai*.ttf"
     ],
     "cleanUrls": true,
     "trailingSlash": false,

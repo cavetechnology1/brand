@@ -4,8 +4,8 @@ import hashlib, io, sys, zipfile
 ROOT = Path(__file__).resolve().parents[1]
 files = {'LICENSE.txt': ROOT / 'LICENSE.txt'}
 for folder in ('logos', 'icons', 'patterns'):
-    for file in sorted((ROOT / 'assets' / folder).glob('*.svg')):
-        files[f'{folder}/{file.name}'] = file
+    for file in sorted((ROOT / 'assets' / folder).rglob('*.svg')):
+        files[folder + '/' + file.relative_to(ROOT / 'assets' / folder).as_posix()] = file
 for file in sorted((ROOT / 'vendor/ibm-plex').iterdir()):
     files[f'fonts/{file.name}'] = file
 buffer = io.BytesIO()

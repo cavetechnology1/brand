@@ -1,6 +1,6 @@
 :root{--font-sans:"Cave UI Latin",system-ui,sans-serif;--font-display:var(--font-sans);--font-ar-text:"Cave UI Arabic",system-ui,sans-serif;--font-ar-display:var(--font-ar-text);font-synthesis:none}
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-block-start:var(--brand-header-height,180px)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--surface);color:var(--ink);font:400 16px/28px var(--font-sans)}
 html[lang="ar"] body{font-family:var(--font-ar-text)}
@@ -84,7 +84,7 @@ td{padding:var(--space-12) var(--space-3);border-block-end:1px solid var(--borde
 footer{margin-block-start:var(--space-5)}
 .ltr{direction:ltr;unicode-bidi:isolate}
 
-.wallpapers{scroll-margin-block-start:160px}
+.wallpapers{scroll-margin-block-start:0}
 .wallpaper-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3);margin:0;padding:0;list-style:none}
 .wallpaper-card{height:100%;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface-raised)}
 .wallpaper-preview{display:block;background:#182643}
@@ -115,3 +115,5 @@ footer{margin-block-start:var(--space-5)}
 .brand-revision{display:inline-block;margin:0 0 var(--space-2);font-size:14px;font-weight:500;color:var(--ink-muted)}
 .type-sample{margin-block:var(--space-3);padding:var(--space-3);border:1px solid var(--border);border-radius:var(--radius-md)}
 .type-sample p{margin:0;line-height:1.7}.type-sample .display{font-size:28px;font-weight:600}.type-sample :lang(ar).display{font-weight:700}
+/* Icon cards stay white in every appearance; use the approved dark link colour. */
+.icons a{color:#047283;display:inline-flex;align-items:center;min-height:44px}

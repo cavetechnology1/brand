@@ -45,10 +45,15 @@ for item in json.loads((ROOT / 'assets/fonts/manifest.json').read_text()):
     require(item['shapingRetained'], f'Shaping: {item["file"]}')
 for item in json.loads((ROOT / 'docs/brand-source-manifest.json').read_text())['files']:
     require(hashlib.sha256((ROOT / item['file']).read_bytes()).hexdigest() == item['sha256'], f'Approved asset hash: {item["file"]}')
+for item in json.loads((ROOT / 'docs/web-logo-manifest.json').read_text()):
+    require(hashlib.sha256((ROOT / item['source']).read_bytes()).hexdigest() == item['sourceSha256'], f'Approved PDF hash: {item["source"]}')
+    svg = (ROOT / item['file']).read_text()
+    require(hashlib.sha256(svg.encode()).hexdigest() == item['sha256'], f'Delivery SVG hash: {item["file"]}')
+    require('<text' not in svg and '@font-face' not in svg and 'data:font' not in svg, f'Font-dependent delivery SVG: {item["file"]}')
 for filename in ('plex-sans-LICENSE.txt','plex-sans-arabic-LICENSE.txt'):
     require((ROOT / 'assets/fonts' / filename).read_bytes() == (fonts / filename).read_bytes(), f'Font notice {filename}')
 config = json.loads((ROOT / 'firebase.json').read_text())['hosting']
-for excluded in ('vendor/**','docs/**','scripts/**','**/.*','*.md','LICENSE.txt','assets/fonts/Hero.*'):
+for excluded in ('vendor/**','docs/**','scripts/**','**/.*','*.md','LICENSE.txt','assets/fonts/Hero.*','assets/fonts/Poppins*.ttf','assets/fonts/Almarai*.ttf'):
     require(excluded in config['ignore'], f'Hosting exclusion missing: {excluded}')
 require(not (ROOT / '.github/workflows').exists(), 'CI must remain disabled')
 if errors:

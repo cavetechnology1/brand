@@ -1,5 +1,12 @@
 (function(){
  const ar=document.documentElement.lang==='ar';
+ const header=document.querySelector('.top');
+ if(header){
+  const offset=()=>document.documentElement.style.setProperty('--brand-header-height',`${header.getBoundingClientRect().height+16}px`);
+  offset();
+  if(window.ResizeObserver)new ResizeObserver(offset).observe(header);
+  else window.addEventListener('resize',offset);
+ }
  const status=document.createElement('p');status.className='brand-tool-status';status.setAttribute('role','status');document.querySelector('#colour').append(status);
  document.querySelectorAll('.sw').forEach(swatch=>{
   const code=swatch.querySelector('code'),name=swatch.querySelector('b').textContent;
@@ -17,6 +24,7 @@
   label.append(select);card.append(label);
   const guidance=document.createElement('p');guidance.className='asset-guidance';guidance.textContent=white?(ar?'للخلفيات الكحلية والفحمية والفيروزية. حافظ على اللون والنسب.':'For navy, charcoal and teal backgrounds. Preserve color and proportions.'):(ar?'للخلفيات البيضاء والورقية فقط. حافظ على اللون والنسب.':'For white and paper backgrounds only. Preserve color and proportions.');card.append(guidance);
   const button=document.createElement('button');button.type='button';button.className='asset-button';button.textContent=ar?'تنزيل PNG شفاف · عرض 1600 بكسل':'Download transparent PNG · 1600px wide';
+  button.setAttribute('aria-label',button.textContent+': '+img.alt);
   const result=document.createElement('p');result.className='asset-guidance';result.setAttribute('role','status');
   button.addEventListener('click',async()=>{
    button.disabled=true;

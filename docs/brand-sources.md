@@ -1,6 +1,10 @@
 # Brand sources
 
-The approved source is **Cave Brand - Plex R3 - 2026-11-01**. The four English/Arabic colour/white logo SVGs are copied byte-for-byte from its `01 Logo Masters` into the established website URLs. `brand-source-manifest.json` records the original filename and SHA-256. Their embedded original fonts preserve the supplied optical positioning and shaping. Do not optimize, recolour, crop, retype or rebuild the logo geometry.
+The approved source is **Cave Brand - Plex R3 - 2026-11-01**. The four English/Arabic colour/white logo SVGs are copied byte-for-byte from its `01 Logo Masters` into the established website URLs. `brand-source-manifest.json` records the original filename and SHA-256. Their embedded original fonts preserve the supplied optical positioning and shaping. Do not recolour, crop, retype or rebuild the logo geometry.
+
+Safari can paint embedded-font wordmarks after the symbol. For site previews/footer images and PNG export, `assets/logos/web/` uses font-independent path exports of the approved R3 vector PDFs retained in `vendor/brand-r3`. `web-logo-manifest.json` records source/output hashes and PyMuPDF 1.26.5 conversion provenance. `scripts/prepare-web-logos.py` regenerates these delivery derivatives without typing, changing colours or redesigning the artwork. The editable original SVG download URLs remain unchanged. The kit includes both original masters and delivery outlines.
+
+A comparison with approved transparent PNG exports at their native 726 × 257 (English) and 621 × 257 (Arabic) sizes allowed two pixels for renderer differences. English missing/extra ink fractions were zero; the largest Arabic missing-ink fraction was 0.756% and extra-ink fraction 0.302%. The four derivatives were also visually inspected. This is a rendering-fidelity check, not a claim of byte identity with the editable originals.
 
 The existing official symbol, icons, patterns and wallpapers are unchanged. Previous wordmarks remain in Git history. README and social-card compositions use the R3 originals on approved white with unchanged proportions.
 

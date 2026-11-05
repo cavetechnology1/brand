@@ -1,11 +1,14 @@
 """Prepare a reviewable, exact beta Hosting bundle. This never deploys, tags or publishes."""
 from pathlib import Path
-import argparse, hashlib, json, shutil, subprocess, zipfile
+import argparse, hashlib, json, re, shutil, subprocess, zipfile
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--version', default='v0.2.0-beta.1')
+parser.add_argument('--version', required=True, help='New reviewed beta tag, for example v0.2.0-beta.2')
 args = parser.parse_args()
-assert args.version == 'v0.2.0-beta.1', 'Review the candidate version before changing it.'
+if not re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+-beta\.[1-9][0-9]*', args.version):
+    raise SystemExit('Choose a reviewed beta version such as v0.2.0-beta.2.')
+if subprocess.run(['git','show-ref','--verify','--quiet','refs/tags/' + args.version],cwd=ROOT).returncode == 0:
+    raise SystemExit('That tag already exists. Preserve published history and choose a new reviewed beta version.')
 status = subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True)
 if status.strip(): raise SystemExit('Commit the reviewed source before preparing the exact release bundle.')
 commit = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()

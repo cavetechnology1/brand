@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased — 0.2.0-beta.1 candidate
+## 0.2.0-beta.1 — 2026-11-05
 
 - Explicitly revalidate clean HTML routes (`/`, `/ar`, `/404`); extension-only cache rules do not cover those requested URLs.
 - Add accessible English/Arabic mobile navigation with a labelled menu button, expanded state, Escape/focus restoration, section-target focus, outside dismissal, short-screen scrolling and a no-JavaScript fallback.
@@ -15,7 +15,7 @@
 - Add contribution guidance, issue forms, pull request template and a manual beta release checklist.
 - Preserve the original symbol geometry, palette, patterns, icons, wallpapers, language-specific names, appearance choices and existing security headers.
 
-This entry describes source changes. No deployment or public release is implied. No CI enabled, paid service added, repository transfer or security/access change performed.
+Published as a [GitHub prerelease](https://github.com/Shmaisanymostafa/brand/releases/tag/v0.2.0-beta.1) and deployed to the existing brand site from `857de10`. [Release and validation record](docs/releases/v0.2.0-beta.1.md). CI remains disabled; no paid service, ownership transfer or security/access change was made.
 
 ## Previous source baseline
 

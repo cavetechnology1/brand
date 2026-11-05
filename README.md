@@ -7,7 +7,7 @@ Approved logos, original symbol, colours, patterns and icons, with bilingual usa
 
 <img src="docs/readme-assets/brand-overview.png" alt="Approved Plex R3 English and Arabic Cave logos with the Cave palette" width="1000">
 
-**Repository status:** Plex R3 beta candidate. A commit on `main` does not establish what is live. Deployment and publication of a GitHub prerelease are separate owner-reviewed steps. See the [release checklist](docs/releasing.md).
+**Current beta:** [v0.2.0-beta.1](https://github.com/Shmaisanymostafa/brand/releases/tag/v0.2.0-beta.1) · [English guide](https://brand.cave.technology/) · [العربية](https://brand.cave.technology/ar). The site and release use source `857de10`. See the [published release record](docs/releases/v0.2.0-beta.1.md) for verification and remaining limitations; later documentation commits on `main` do not change Hosting. Future rollouts follow the [release checklist](docs/releasing.md).
 
 ## Use the identity
 
@@ -70,7 +70,7 @@ IBM Plex fonts retain their SIL Open Font License 1.1, with copyright and notice
 
 Hosting is the existing Firebase project/site `cave-brand-kit`, with custom domain `brand.cave.technology`. Existing security headers are preserved. Do not deploy vendor sources, scripts, documentation, repository metadata, local evidence or proprietary font files. This project has no automatic release/deployment pipeline. Retired Poppins/Almarai font files remain in source history/compatibility files and are excluded from the new Hosting bundle.
 
-After committing the reviewed source, `python3 scripts/prepare-release.py` creates an ignored `.local/releases/` handoff: a static Hosting ZIP, per-file hashes, exact target/scope, kit/checksums and beta release notes. This command never deploys, tags or publishes.
+After committing a reviewed future source and choosing a new beta version, `python3 scripts/prepare-release.py --version v0.2.0-beta.2` creates an ignored `.local/releases/` handoff: a static Hosting ZIP, per-file hashes, exact target/scope, kit/checksums and beta release notes. This command never deploys, tags or publishes.
 
 The owner will transfer the repository to the organization separately. After that transfer, update the canonical repository links, clone remote and issue/release references, and verify the existing custom domain and hosting before any subsequent release. Do not transfer Firebase ownership or change access as part of a repository content update.
 

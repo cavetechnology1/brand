@@ -35,10 +35,13 @@ Open English at `http://127.0.0.1:8080/` and Arabic at `http://127.0.0.1:8080/ar
 python3 scripts/check.py
 python3 scripts/build-kit.py --check
 node --check assets/js/theme.js
+node --check assets/js/navigation.js
 node --check assets/js/brand-tools.js
 ```
 
-Checks use only Python and Node standard libraries. Review both languages at 320 px, 390 px and desktop widths, in all four appearances. Verify real font loading, shaping, image rendering, keyboard focus, background choices, colour copying, SVG/PNG downloads and the kit contents. The optional browser matrix uses an existing Playwright installation: `PLAYWRIGHT_MODULE=/path/to/playwright node scripts/browser-review.cjs` (Chrome path and preview URL are configurable in the script). Use `BRAND_BROWSER=firefox` or `BRAND_BROWSER=webkit` to select another installed engine. Run `scripts/accessibility-review.cjs` with the same Playwright path and `AXE_SCRIPT=/path/to/axe.min.js` for the optional axe/keyboard matrix. Local checks are documented in [validation](docs/validation.md); they do not claim a production deployment or complete accessibility certification.
+Checks use only Python and Node standard libraries. Review both languages at 320 px, 390 px and desktop widths, in all four appearances. Verify real font loading, shaping, image rendering, keyboard focus, background choices, colour copying, SVG/PNG downloads and the kit contents. The optional browser matrix uses an existing Playwright installation: `PLAYWRIGHT_MODULE=/path/to/playwright node scripts/browser-review.cjs` (Chrome path and preview URL are configurable in the script). The responsive header uses a labelled menu button through 1024 px, with ordinary navigation on wider screens. Escape restores focus, section selection closes the panel, and links remain available without JavaScript. `scripts/navigation-review.cjs` checks the menu across the breakpoint, short viewports and nested appearance controls using the same optional Playwright/axe paths.
+
+Use `BRAND_BROWSER=firefox` or `BRAND_BROWSER=webkit` to select another installed engine. Run `scripts/accessibility-review.cjs` with the same Playwright path and `AXE_SCRIPT=/path/to/axe.min.js` for the optional axe/keyboard matrix. Local checks are documented in [validation](docs/validation.md); they do not claim a production deployment or complete accessibility certification.
 
 CI remains disabled. No Actions workflow, automatic deployment or paid service is introduced. The optional design-system copy check needs a separate checkout: `CAVE_DESIGN_DIR=/path/to/design node scripts/sync-from-design.mjs --check`. Brand typography is an intentional local override in `brand.css`; generated design tokens remain unchanged.
 

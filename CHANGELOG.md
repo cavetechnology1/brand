@@ -2,6 +2,7 @@
 
 ## Unreleased — 0.2.0-beta.1 candidate
 
+- Add accessible English/Arabic mobile navigation with a labelled menu button, expanded state, Escape/focus restoration, section-target focus, outside dismissal, short-screen scrolling and a no-JavaScript fallback.
 - Align English and Arabic pages with the approved IBM Plex R3 typography and exact supplied R3 wordmarks.
 - Keep Regular body copy, real Medium labels and language-appropriate heading weights; remove obsolete runtime font requests.
 - Request the R3 revision in SVG download and social-preview URLs so cached pre-Plex assets are not reused.

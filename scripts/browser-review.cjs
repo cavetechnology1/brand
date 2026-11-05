@@ -28,6 +28,7 @@ const csp = JSON.parse(fs.readFileSync('firebase.json')).hosting.headers.flatMap
    await page.evaluate(()=>Promise.all([...document.images].map(i=>i.decode())));
    const metrics=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,language:document.documentElement.lang,dir:document.documentElement.dir,bodyWeight:getComputedStyle(document.body).fontWeight,font:getComputedStyle(document.body).fontFamily,headingWeight:getComputedStyle(document.querySelector('h1')).fontWeight,fonts:[...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family),images:[...document.images].every(i=>i.complete&&i.naturalWidth>0),theme:document.documentElement.dataset.theme}));
    assert.equal(metrics.width,width); assert.ok(metrics.scroll<=width,JSON.stringify(metrics));assert.equal(metrics.bodyWeight,'400');assert.equal(metrics.headingWeight,language==='ar'?'700':'600');assert.ok(metrics.font.includes(language==='ar'?'Cave UI Arabic':'Cave UI Latin'));assert.ok(metrics.fonts.some(f=>f.includes(language==='ar'?'Cave UI Arabic':'Cave UI Latin')));assert.ok(metrics.images);assert.equal(errors.length,0,errors.join('\n'));
+   if(await page.locator('#nav-toggle').isVisible()) await page.locator('#nav-toggle').click();
    await page.getByRole('button',{name:language==='ar'?/المظهر/:/Theme/}).click();
    await page.locator(`input[name="theme"][value="${theme}"]`).check();
    await page.keyboard.press('Escape');

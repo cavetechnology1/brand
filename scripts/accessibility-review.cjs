@@ -12,13 +12,16 @@ try{for(const language of ['en','ar'])for(const width of [320,1440])for(const th
  await context.route('**/*',async route=>{if(!route.request().url().startsWith(origin+'/'))return route.abort();const response=await route.fetch();return route.fulfill({response,headers:{...response.headers(),'content-security-policy':csp}})});
  await context.addInitScript(t=>localStorage.setItem('cave-brand-theme',t),theme);
  const p=await context.newPage();await p.goto(origin+(language==='ar'?'/ar/':'/'));await p.evaluate(()=>document.fonts.ready);
+ const menu=p.locator('#nav-toggle');if(await menu.isVisible())await menu.click();
  const toggle=p.locator('#theme-button');await toggle.focus();await p.keyboard.press('Space');assert.equal(await toggle.getAttribute('aria-expanded'),'true');
  assert.ok(await p.locator('#theme-options input:checked').evaluate(e=>e===document.activeElement));
  const before=await p.locator('#theme-options input:checked').inputValue();await p.keyboard.press(before==='black'?'ArrowUp':'ArrowDown');const after=await p.locator('#theme-options input:checked').inputValue();assert.notEqual(before,after);
  await p.keyboard.press('Escape');assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert.ok(await toggle.evaluate(e=>e===document.activeElement));
  await p.keyboard.press(engine==='webkit'?'Alt+Tab':'Tab');assert.ok(await p.locator('.hero a[download]').evaluate(e=>e===document.activeElement),await p.evaluate(()=>document.activeElement.outerHTML));
+ if(await menu.isVisible())await menu.click();
  await toggle.click();await p.locator(`input[name="theme"][value="${theme}"]`).check();await p.keyboard.press('Escape');
  await p.locator('.skip-link').focus();await p.keyboard.press('Enter');assert.ok(await p.locator('#main').evaluate(e=>e===document.activeElement));
+ if(await menu.isVisible())await menu.click();
  await p.locator('.nav a[href="#type"]').click();
  const anchor=await p.evaluate(()=>({target:document.querySelector('#type').getBoundingClientRect().top,header:document.querySelector('.top').getBoundingClientRect().bottom}));assert.ok(anchor.target>=anchor.header-1,JSON.stringify(anchor));
  await p.evaluate(axe);

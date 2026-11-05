@@ -117,3 +117,21 @@ footer{margin-block-start:var(--space-5)}
 .type-sample p{margin:0;line-height:1.7}.type-sample .display{font-size:28px;font-weight:600}.type-sample :lang(ar).display{font-weight:700}
 /* Icon cards stay white in every appearance; use the approved dark link colour. */
 .icons a{color:#047283;display:inline-flex;align-items:center;min-height:44px}
+
+.nav-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 12px;margin-inline-start:auto;border:1px solid var(--border-strong);border-radius:var(--radius-control);background:var(--surface);color:var(--ink);font:500 14px/20px var(--font-sans);cursor:pointer}
+.nav-toggle[hidden],.nav[hidden]{display:none}
+html[lang="ar"] .nav-toggle{font-family:var(--font-ar-text)}
+.nav-toggle:hover,.nav-toggle[aria-expanded="true"]{background:var(--surface-hover)}
+.nav-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round}
+.nav-toggle .menu-close{display:none}
+.nav-toggle[aria-expanded="true"] .menu-bars{display:none}
+.nav-toggle[aria-expanded="true"] .menu-close{display:block}
+@media(max-width:1024px){
+ .mobile-nav-ready .wrap{position:relative}
+ .mobile-nav-ready .nav{position:absolute;inset-block-start:100%;inset-inline:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;padding:12px;max-height:calc(100vh - 80px);max-height:calc(100dvh - 80px);overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--border-strong);border-radius:var(--radius-md);background:var(--surface);box-shadow:var(--shadow-menu)}
+ .mobile-nav-ready .nav[hidden]{display:none}
+ .mobile-nav-ready .nav a{display:flex;align-items:center;min-height:44px;padding:8px 12px;overflow-wrap:anywhere;border-radius:var(--radius-control)}
+ .mobile-nav-ready .nav a:hover{background:var(--surface-hover)}
+ .mobile-nav-ready .theme-picker{grid-column:1 / -1;width:100%;margin:0;padding-block-start:8px;border-block-start:1px solid var(--border)}
+ .mobile-nav-ready .theme-options{position:static;width:100%;margin-block-start:8px;box-shadow:none}
+}

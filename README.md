@@ -1,97 +1,72 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logos/cave-symbol-white.svg">
-    <img src="assets/logos/cave-symbol-color.svg" alt="Cave official symbol" width="84">
-  </picture>
-</p>
+<p align="center"><img src="assets/logos/cave-symbol-color.svg" alt="Cave official symbol" width="84"></p>
+<h1 align="center">Cave Brand · كهف</h1>
+<p align="center"><strong>The official Cave identity, in English and Arabic.</strong><br>IBM Plex · R3 · Beta</p>
+<p align="center"><a href="https://brand.cave.technology">Live guide</a> · <a href="kit/cave-brand-kit.zip">Download kit</a> · <a href="CONTRIBUTING.md">Contribute</a> · <a href="CHANGELOG.md">Changelog</a></p>
 
-<h1 align="center">Cave Brand</h1>
+Approved logos, original symbol, colours, patterns and icons, with bilingual usage rules and self-hosted typography. This is a static HTML/CSS/JavaScript site: **no runtime dependencies, build service, analytics or paid tooling**.
 
-<p align="center"><strong>The Cave identity, with the rules that keep it consistent.</strong></p>
+<img src="docs/readme-assets/brand-overview.png" alt="Approved Plex R3 English and Arabic Cave logos with the Cave palette" width="1000">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/English_%2F_العربية-047283?style=flat-square" alt="English and Arabic">
-  <img src="https://img.shields.io/badge/Plain_HTML_%2B_CSS-182643?style=flat-square" alt="Static HTML and CSS">
-  <img src="https://img.shields.io/badge/Brand_assets-Proprietary-182643?style=flat-square" alt="Proprietary brand assets">
-</p>
+**Repository status:** Plex R3 beta candidate. A commit on `main` does not establish what is live. Deployment and publication of a GitHub prerelease are separate owner-reviewed steps. See the [release checklist](docs/releasing.md).
 
-<p align="center">
-  <a href="https://brand.cave.technology">Brand guide</a> · <a href="#the-brand-kit">Brand kit</a> · <a href="#get-started">Get started</a> · <a href="#usage-and-licensing">Usage and licensing</a> · <a href="#maintainer-reference">Maintainer reference</a>
-</p>
+## Use the identity
 
----
+- English: **Cave**. Arabic: **كهف**. Use the supplied language-specific logo, preserving its proportions.
+- English typography: **IBM Plex Sans** — body 400, labels 500, headings and wordmark 600.
+- Arabic typography: **IBM Plex Sans Arabic** — body 400, labels 500, headings and wordmark 700. Preserve connected shaping and normal letter spacing.
+- The R3 Arabic wordmark has approximately 10% greater measured ink height, optically aligned with the English mark. Use the approved artwork; do not apply that ratio to body text.
+- Full colour logos belong on white or paper; white logos belong on teal, navy or charcoal. The original symbol, colours, icons, patterns and wallpapers retain their approved artwork.
 
-The official Cave logo, symbol, icons, patterns and colours, presented in a bilingual static website. Use the guide to choose the right asset and understand its permitted use. Interface components and design tokens live in the separate [Cave Design System](https://github.com/Shmaisanymostafa/Cave-Design-System).
+The kit includes R3 logo masters, icons, patterns, font originals and notices. The website offers SVG downloads, transparent PNG export, permitted background previews and colour copying. Desktop wallpapers are separate original 1916 × 821 downloads. [Sources and provenance](docs/brand-sources.md).
 
-<img src="docs/readme-assets/brand-overview.png" alt="Original English and Arabic Cave logos on white, with teal, lagoon, deep teal, navy and paper palette swatches" width="1000">
+## Run locally
 
-<sub>Documentation composition of the original, unmodified lockups and verified palette values. [Artwork provenance](docs/readme-assets/NOTICE.md).</sub>
-
-## The brand kit
-
-| Resource | What you will find |
-| --- | --- |
-| **Logos and symbol** | English and Arabic lockups, full-colour originals and white reversals |
-| **Icons and patterns** | Cave, layers and river icons; outline, layers and dots patterns |
-| **Desktop wallpapers** | Cave Horizon and Cave Flow, original 1916 × 821 PNGs (approximately 21:9), available in the site’s wallpaper section |
-| **Usage guidance** | Approved backgrounds, naming, colour values, typography and licensing |
-| **Bilingual website** | English at `/` and Arabic at `/ar/`; System, Light, Dark and Black appearance choices |
-
-[Download the kit](kit/cave-brand-kit.zip) · [Browse logos](assets/logos) · [Browse icons](assets/icons) · [Browse patterns](assets/patterns)
-
-## Get started
-
-The site is plain static files: no dependency installation or build step is required.
+From the repository root:
 
 ```sh
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8080/` for English or `http://127.0.0.1:8080/ar/` for Arabic (in production the Arabic page is `/ar`, without a trailing slash). Run the server from the repository root so asset URLs resolve correctly.
+Open English at `http://127.0.0.1:8080/` and Arabic at `http://127.0.0.1:8080/ar/`. Firebase uses the clean production URL `/ar`. Appearance options are System, Light, Dark and Black; the saved choice is shared across languages and tabs.
+
+## Check a change
+
+```sh
+python3 scripts/check.py
+python3 scripts/build-kit.py --check
+node --check assets/js/theme.js
+node --check assets/js/brand-tools.js
+```
+
+Checks use only Python and Node standard libraries. Review both languages at 320 px, 390 px and desktop widths, in all four appearances. Verify real font loading, shaping, image rendering, keyboard focus, background choices, colour copying, SVG/PNG downloads and the kit contents. The optional browser matrix uses an existing Playwright installation: `PLAYWRIGHT_MODULE=/path/to/playwright node scripts/browser-review.cjs` (Chrome path and preview URL are configurable in the script). Local checks are documented in [validation](docs/validation.md); they do not claim a production deployment or complete accessibility certification.
+
+CI remains disabled. No Actions workflow, automatic deployment or paid service is introduced. The optional design-system copy check needs a separate checkout: `CAVE_DESIGN_DIR=/path/to/design node scripts/sync-from-design.mjs --check`. Brand typography is an intentional local override in `brand.css`; generated design tokens remain unchanged.
+
+## Repository map
+
+| Path | Purpose |
+| --- | --- |
+| `index.html`, `ar/index.html`, `404.html` | English, RTL Arabic and not-found pages |
+| `assets/css/` | Self-hosted font definitions, copied design tokens/components, brand overrides |
+| `assets/logos/`, `assets/icons/`, `assets/patterns/` | Approved artwork; R3 lockups retain the established URLs |
+| `assets/fonts/` | Compact Plex-derived web faces, source mapping and OFL notices |
+| `vendor/ibm-plex/` | Unmodified approved IBM originals, pinned source hashes and notices |
+| `assets/wallpapers/` | Original Cave Horizon and Cave Flow PNGs |
+| `kit/` | Reproducible downloadable kit and SHA-256 checksum |
+| `scripts/`, `docs/`, `.github/` | Local checks, release guidance and issue/PR templates |
 
 ## Usage and licensing
 
-**Cave brand assets are proprietary and are not open source.** The name, logo, symbol, wordmark, icons and patterns belong to Cave. The kit's `LICENSE.txt` and the website's [licence section](https://brand.cave.technology/#licence) define the terms.
+**Cave marks and brand assets are proprietary, not open source.** The existing [brand licence](LICENSE.txt) permits unmodified files to refer to Cave in press, partner/integration pages and a “Powered by Cave” credit. Other uses need written permission from `info@cave.technology`. Do not redraw, recolour, retype or stretch the logos, or imply endorsement. Publishing this repository does not grant an open-source software licence.
 
-The existing terms allow unmodified logo files to refer to Cave in press, partner or integration pages, and a “Powered by Cave” credit. Other uses, including a modified logo or using it as your own brand, require written permission from `info@cave.technology`. Do not recolour, redraw, retype, stretch or add effects to the mark, or imply Cave endorsement.
+IBM Plex fonts retain their SIL Open Font License 1.1, with copyright and notices bundled. Modified web subsets use the internal family names **Cave UI Latin / Cave UI Arabic** to respect the reserved font name; their designs come from IBM Plex. Original TTFs retain their original names. Hero and Blue Ocean are not distributed; they are not requested by the updated site. The separate design system's licence does not cover Cave marks.
 
-Poppins and Almarai retain their SIL OFL terms. Hero and Blue Ocean are licensed to Cave and are not distributed in the kit. The design system's MIT package licence does **not** cover Cave marks or proprietary fonts.
+## Maintaining and releasing
 
-## Maintainer reference
+[Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Release checklist](docs/releasing.md) · [Brand provenance](docs/brand-sources.md)
 
-<details>
-<summary><strong>Repository map, site tools, asset maintenance and hosting</strong></summary>
+Hosting is the existing Firebase project/site `cave-brand-kit`, with custom domain `brand.cave.technology`. Existing security headers are preserved. Do not deploy vendor sources, scripts, documentation, repository metadata, local evidence or proprietary font files. This project has no automatic release/deployment pipeline.
 
-### Repository map
+The owner will transfer the repository to the organization separately. After that transfer, update the canonical repository links, clone remote and issue/release references, and verify the existing custom domain and hosting before any subsequent release. Do not transfer Firebase ownership or change access as part of a repository content update.
 
-| Location | Purpose |
-| --- | --- |
-| `index.html` · `ar/index.html` | Hand-edited pages; keep both languages in step |
-| `assets/logos/` · `assets/icons/` · `assets/patterns/` | Original SVG artwork |
-| `assets/css/tokens.css` · `assets/css/components.css` | Copies of design-system output (`tokens.json` and `source/components/bundle.css`); refresh with `node scripts/sync-from-design.mjs`, verify with `--check` |
-| `scripts/` | Maintainer tools; excluded from hosting |
-| `assets/css/brand.css` · `assets/css/fonts.css` | Brand-site styling and typography |
-| `assets/js/` | Theme selection and brand tools |
-| `kit/cave-brand-kit.zip` | Downloadable assets with `LICENSE.txt` |
-
-### Appearance and asset tools
-
-The theme picker stores `cave-brand-theme` locally and shares it across language pages and tabs. System follows device changes. If storage is unavailable, switching still works for the current page. `assets/js/theme.js` applies the saved choice before styles load, including on the 404 page.
-
-Committed site tools provide approved background previews, transparent 1600px PNG export from the original SVG, and copy-colour controls with a manual fallback. Export preserves original proportions and omits the preview background. These source capabilities do not establish the currently deployed revision.
-
-### Asset maintenance
-
-`assets/wallpapers/` contains the approved original Cave Horizon and Cave Flow PNGs. The English and Arabic wallpaper sections preview and download these same files without resizing or adding a logo. Both are 1916 × 821 pixels (approximately 21:9). They are website downloads, separate from the logo-and-pattern brand kit.
-
-Keep the supplied SVGs unchanged. When an authorized asset changes, rebuild the kit with the three asset folders and its existing licence text inside `cave-brand-kit/`. Fonts are not offered as part of the kit.
-
-`Hero.otf` is intentionally absent from Git because no redistribution licence is provided, and `firebase.json` excludes `assets/fonts/Hero.*` from every deploy so a local copy can never be published; production headings use Poppins (a missing Hero file is a harmless 404 on the font request). Only use a separately licensed local copy when authorized. The old letterhead images and presentation PDF remain excluded because they contain retired information. Product icons are not part of this kit.
-
-### Hosting
-
-`firebase.json` serves the repository directly. The configured Firebase project and Hosting site are `cave-brand-kit`; the custom domain is `brand.cave.technology`. Responses carry a Content-Security-Policy (scripts, fonts and images from this origin only; inline styles allowed for the few `style` attributes). Deployment requires separate owner approval. This documentation change does not deploy the website.
-
-</details>
-
-[Design system](https://design.cave.technology) · [Cave Shops](https://shops.cave.technology)
+[Cave](https://cave.technology) · [Design system](https://design.cave.technology) · [Cave Shops](https://shops.cave.technology)

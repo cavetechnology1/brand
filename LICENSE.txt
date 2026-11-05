@@ -1,0 +1,10 @@
+Cave brand kit
+
+The Cave name, logo, symbol, wordmark, icons and patterns in this kit belong to Cave and are not open source.
+
+You may use the unmodified files to refer to Cave: in press, in partner and integration pages, and in a "Powered by Cave" credit. Do not recolour, retype, redraw, stretch, add effects to, or combine the logo with other marks so that it looks like Cave endorses or made your product. Anything else, including a modified logo or use as your own brand, needs written permission from info@cave.technology.
+
+The included IBM Plex Sans and IBM Plex Sans Arabic font files retain their separate SIL Open Font License 1.1 terms, copyrights and notices in fonts/. The website web subsets use the internal names Cave UI Latin and Cave UI Arabic. These font rights do not grant rights to Cave marks. Hero and Blue Ocean are not distributed.
+
+Rules for use: https://brand.cave.technology
+Questions: info@cave.technology

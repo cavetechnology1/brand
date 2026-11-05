@@ -1,0 +1,29 @@
+{
+  "package": "Cave Brand - Plex R3 - 2026-11-01",
+  "files": [
+    {
+      "source": "01 Logo Masters/cave-en-color.svg",
+      "file": "assets/logos/cave-logo-en-color-compact.svg",
+      "sha256": "bb1d257d207c41b8c8d428b6f90bc7c359e283ebc86cd6d23e2252c3cfc10ab1",
+      "unchanged": true
+    },
+    {
+      "source": "01 Logo Masters/cave-en-white.svg",
+      "file": "assets/logos/cave-logo-en-white-compact.svg",
+      "sha256": "55e6baa3cbd63596c4b9febdafa60a4e6981609526172103ab144928ba20caff",
+      "unchanged": true
+    },
+    {
+      "source": "01 Logo Masters/cave-ar-color.svg",
+      "file": "assets/logos/cave-logo-ar-color-compact.svg",
+      "sha256": "a9ede9fb2f98e992f9f0df52f6effd1b538bb25188ae977aae6d546c56265709",
+      "unchanged": true
+    },
+    {
+      "source": "01 Logo Masters/cave-ar-white.svg",
+      "file": "assets/logos/cave-logo-ar-white-compact.svg",
+      "sha256": "1d930a6646d504ac68742dbb73c11669a10f483b781e7c8fe1a7a1fe31fb7927",
+      "unchanged": true
+    }
+  ]
+}

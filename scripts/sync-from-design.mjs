@@ -4,7 +4,7 @@
 // Needs a sibling design.cave.technology checkout (CAVE_DESIGN_DIR overrides the path); no build step.
 //   tokens.css      generated from source/tokens.json, the same function the design site uses
 //   components.css  source/components/bundle.css, the product-pattern bundle (footer, powered-by, ...)
-// Brand-only values (such as the Hero display font) belong in assets/css/brand.css, not in these copies.
+// Brand-only values (such as the Plex font families) belong in assets/css/brand.css, not in these copies.
 import {readFile, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';

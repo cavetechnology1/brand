@@ -1,0 +1,10 @@
+name: Brand guide improvement
+description: Suggest a useful change to the guide or contributor workflow.
+body:
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Problem and proposed improvement
+      description: Explain who benefits and include approved source references for artwork changes.
+    validations:
+      required: true

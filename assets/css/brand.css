@@ -1,5 +1,4 @@
-/* Brand-only: Hero is the display face when a licensed copy is present locally; it is never served in production, so headings fall back to Poppins. */
-:root{--font-display:"Hero","Poppins",system-ui,sans-serif}
+:root{--font-sans:"Cave UI Latin",system-ui,sans-serif;--font-display:var(--font-sans);--font-ar-text:"Cave UI Arabic",system-ui,sans-serif;--font-ar-display:var(--font-ar-text);font-synthesis:none}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -35,8 +34,8 @@ html[lang="ar"] .theme-options label{font-family:var(--font-ar-text)}
 :root[data-theme="dark"] .logo-dark,:root[data-theme="black"] .logo-dark{display:block}
 :root[data-theme="dark"] .logo-light,:root[data-theme="black"] .logo-light{display:none}
 .hero{padding-block:var(--space-6) var(--space-4)}
-.hero h1{margin:0;font:400 clamp(44px,8vw,72px)/1.1 var(--font-display)}
-html[lang="ar"] .hero h1{font-family:var(--font-ar-display);font-weight:300;font-size:clamp(52px,9vw,84px);line-height:1.35}
+.hero h1{margin:0;font:600 clamp(44px,8vw,72px)/1.1 var(--font-display)}
+html[lang="ar"] .hero h1{font-family:var(--font-ar-display);font-weight:700;font-size:clamp(44px,8vw,72px);line-height:1.35}
 .hero p{max-width:60ch;margin:var(--space-2) 0 0;color:var(--ink-muted);font-size:20px;line-height:32px}
 .actions{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-block-start:var(--space-4)}
 section{padding-block:var(--space-4);border-block-start:1px solid var(--border)}
@@ -110,3 +109,9 @@ footer{margin-block-start:var(--space-5)}
 :where(select,input):focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
 @media(max-width:360px){.cols{grid-template-columns:minmax(0,1fr)}.top .wrap{gap:8px}.nav{gap:8px}.brand{max-width:100%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+:lang(ar){font-family:var(--font-ar-text);letter-spacing:normal}
+:lang(en){font-family:var(--font-sans)}
+.brand-revision{display:inline-block;margin:0 0 var(--space-2);font-size:14px;font-weight:500;color:var(--ink-muted)}
+.type-sample{margin-block:var(--space-3);padding:var(--space-3);border:1px solid var(--border);border-radius:var(--radius-md)}
+.type-sample p{margin:0;line-height:1.7}.type-sample .display{font-size:28px;font-weight:600}.type-sample :lang(ar).display{font-weight:700}

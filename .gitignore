@@ -4,3 +4,6 @@
 
 # Hero has no open licence (all rights reserved): keep the file local, not in git
 assets/fonts/Hero.otf
+
+.local/
+__pycache__/

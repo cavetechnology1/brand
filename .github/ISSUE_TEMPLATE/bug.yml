@@ -1,0 +1,24 @@
+name: Brand guide problem
+description: Report a broken asset, translation, layout or download.
+title: "[Guide]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Expected and actual result
+      description: Include the page or asset URL. Remove private information.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Language, appearance, browser and viewport
+      placeholder: Arabic, Dark, Safari, 390 px
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps or suggested correction
+    validations:
+      required: true

@@ -9,7 +9,11 @@
       "**/*.log",
       "tests/**",
       "scripts/**",
-      "assets/fonts/Hero.*"
+      "assets/fonts/Hero.*",
+      "vendor/**",
+      "docs/**",
+      "*.md",
+      "LICENSE.txt"
     ],
     "cleanUrls": true,
     "trailingSlash": false,

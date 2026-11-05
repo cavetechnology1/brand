@@ -1,8 +1,9 @@
-@font-face{font-family:"Poppins";src:url("/assets/fonts/Poppins-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
-@font-face{font-family:"Poppins";src:url("/assets/fonts/Poppins-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
-@font-face{font-family:"Poppins";src:url("/assets/fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
-@font-face{font-family:"Poppins";src:url("/assets/fonts/Poppins-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
-@font-face{font-family:"Almarai";src:url("/assets/fonts/Almarai-Light.ttf") format("truetype");font-weight:300;font-display:swap}
-@font-face{font-family:"Almarai";src:url("/assets/fonts/Almarai-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
-@font-face{font-family:"Almarai";src:url("/assets/fonts/Almarai-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
-@font-face{font-family:"Hero";src:url("/assets/fonts/Hero.otf") format("opentype");font-weight:400;font-display:swap}
+/* IBM Plex designs; OFL-compliant web subsets. See docs/brand-sources.md. */
+@font-face{font-family:"Cave UI Latin";src:url("/assets/fonts/cave-ui-latin-400.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Cave UI Latin";src:url("/assets/fonts/cave-ui-latin-500.woff2") format("woff2");font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:"Cave UI Latin";src:url("/assets/fonts/cave-ui-latin-600.woff2") format("woff2");font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:"Cave UI Latin";src:url("/assets/fonts/cave-ui-latin-700.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:"Cave UI Arabic";src:url("/assets/fonts/cave-ui-arabic-400.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Cave UI Arabic";src:url("/assets/fonts/cave-ui-arabic-500.woff2") format("woff2");font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:"Cave UI Arabic";src:url("/assets/fonts/cave-ui-arabic-600.woff2") format("woff2");font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:"Cave UI Arabic";src:url("/assets/fonts/cave-ui-arabic-700.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap}

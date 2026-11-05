@@ -4,6 +4,7 @@
 
 - Align English and Arabic pages with the approved IBM Plex R3 typography and exact supplied R3 wordmarks.
 - Keep Regular body copy, real Medium labels and language-appropriate heading weights; remove obsolete runtime font requests.
+- Request the R3 revision in SVG download and social-preview URLs so cached pre-Plex assets are not reused.
 - Add bilingual typography specimens, role guidance, font notices and pinned asset provenance.
 - Keep the exact editable R3 SVG masters and add matching font-independent web outlines from the approved vector PDFs, avoiding delayed Safari wordmark paint.
 - Correct icon-download contrast in Dark/Black, name PNG controls by asset, move skip-link focus into the content and keep anchor headings below the sticky header.
